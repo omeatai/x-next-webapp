@@ -1,7 +1,13 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
+import Banner from "../components/Banner";
+
 export default function Home() {
+  const handleOnBannerBtnClick = () => {
+    console.log("onBannerBtnClick");
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,7 +17,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to Coffee App</h1>
+        {/* <h1 className={styles.title}>Welcome to Coffee App</h1> */}
+        <Banner
+          buttonText="View stores nearby..."
+          handleOnClick={handleOnBannerBtnClick}
+        />
       </main>
     </div>
   );

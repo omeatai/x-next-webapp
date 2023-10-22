@@ -10,6 +10,15 @@ body {
   background-size: cover;
   color: #373b64;
   height: 100%; */
+
+  color: #ddd;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 30%,
+    rgba(67, 56, 202, 1) 95%,
+    rgba(79, 70, 229, 1) 100%
+  );
 }
 
 a {
@@ -21,18 +30,25 @@ a {
   box-sizing: border-box;
 }
 
+:root {
+  --text-purple: rgba(67, 56, 202, 1);
+  --text-purple-dark: rgba(79, 70, 229, 1);
+  --text-black: rgba(17, 24, 39, 1);
+  --text-white-100: rgba(229, 231, 235, 1);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
-    color: white;
+    color: #ddd;
     background: rgb(2, 0, 36);
     background: linear-gradient(
       0deg,
       rgba(2, 0, 36, 1) 30%,
-      rgba(13, 13, 152, 1) 84%,
-      rgba(10, 44, 72, 1) 100%
+      rgba(67, 56, 202, 1) 95%,
+      rgba(79, 70, 229, 1) 100%
     );
   }
 }
