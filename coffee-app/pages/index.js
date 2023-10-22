@@ -17,7 +17,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {/* <h1 className={styles.title}>Welcome to Coffee App</h1> */}
         <Banner
           buttonText="View stores nearby..."
           handleOnClick={handleOnBannerBtnClick}
