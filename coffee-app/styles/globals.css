@@ -12,13 +12,8 @@ body {
   height: 100%; */
 
   color: #ddd;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    0deg,
-    rgba(2, 0, 36, 1) 30%,
-    rgba(67, 56, 202, 1) 95%,
-    rgba(79, 70, 229, 1) 100%
-  );
+  background: rgb(232, 72, 85);
+  background: rgba(17, 24, 39, 1);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -40,21 +35,30 @@ a {
   --text-white-100: rgba(229, 231, 235, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: #ddd;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-      0deg,
-      rgba(2, 0, 36, 1) 30%,
-      rgba(67, 56, 202, 1) 95%,
-      rgba(79, 70, 229, 1) 100%
-    );
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-  }
+/** GLOBAL.CSS **/
+p {
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+pre {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  background-image: none;
+  font-weight: 600;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
 }
