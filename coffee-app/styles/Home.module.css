@@ -13,6 +13,12 @@
   max-width: 72rem /* 1152px */;
   padding-left: 1rem /* 16px */;
   padding-right: 1rem /* 16px */;
+  position: relative;
+}
+
+.heroImage {
+  position: absolute;
+  z-index: 1;
 }
 
 /** Breakpoints:
@@ -22,6 +28,12 @@
   xl: min-width: 1280px;
   2xl: min-width: 1536px;
 **/
+
+@media (max-width: 640px) {
+  .heroImage {
+    top: 100%;
+  }
+}
 
 @media (min-width: 640px) {
   .container {
@@ -34,6 +46,11 @@
     padding-left: 1.5rem /* 24px */;
     padding-right: 1.5rem /* 24px */;
   }
+
+  .heroImage {
+    top: 0%;
+    right: -30%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -45,6 +62,11 @@
   .main {
     margin-top: 4rem /* 64px */;
   }
+
+  .heroImage {
+    top: 0%;
+    right: -20%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -52,9 +74,15 @@
     padding-left: 2.5rem /* 40px */;
     padding-right: 2.5rem /* 40px */;
   }
+
   .main {
     margin-top: 5rem /* 80px */;
     padding-left: 2rem /* 32px */;
     padding-right: 2rem /* 32px */;
+  }
+
+  .heroImage {
+    top: 0%;
+    right: -10%;
   }
 }
