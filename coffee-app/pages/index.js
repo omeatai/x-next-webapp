@@ -2,7 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-import Banner from "../components/Banner";
+import Banner from "../components/Banner/Banner";
+import Card from "../components/Card/Card";
 
 export default function Home() {
   const handleOnBannerBtnClick = () => {
@@ -25,6 +26,7 @@ export default function Home() {
         <div className={styles.heroImage}>
           <Image src="/static/hero-image.svg" width={700} height={400} />
         </div>
+        <Card title="" description="" image="" />
       </main>
     </div>
   );
