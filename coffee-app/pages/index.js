@@ -19,15 +19,44 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Banner
-          buttonText="View stores nearby..."
-          handleOnClick={handleOnBannerBtnClick}
-        />
-        <div className={styles.heroImage}>
-          <Image src="/static/hero-image.svg" width={700} height={400} />
+        <section className={styles.banner}>
+          <Banner
+            buttonText="View stores nearby..."
+            handleOnClick={handleOnBannerBtnClick}
+          />
+          <div className={styles.heroImage}>
+            <Image src="/static/hero-image.svg" width={1000} height={600} />
+          </div>
+        </section>
+        <div className={styles.cardLayout}>
+          <Card
+            name="Hero Coffee"
+            imgUrl="/static/hero-image.svg"
+            href="/coffee-store/hero-coffee"
+            className={styles.card}
+          />
+          <Card
+            name="Hero Coffee"
+            imgUrl="/static/hero-image.svg"
+            href="/coffee-store/hero-coffee"
+            className={styles.card}
+          />
+          <Card
+            name="Hero Coffee"
+            imgUrl="/static/hero-image.svg"
+            href="/coffee-store/hero-coffee"
+            className={styles.card}
+          />
+          <Card
+            name="Hero Coffee"
+            imgUrl="/static/hero-image.svg"
+            href="/coffee-store/hero-coffee"
+            className={styles.card}
+          />
         </div>
-        <Card title="" description="" image="" />
       </main>
     </div>
   );
 }
+
+//
