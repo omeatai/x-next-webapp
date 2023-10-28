@@ -6,7 +6,7 @@ import cls from "classnames";
 const Card = (props) => {
   return (
     <div className="card">
-      <Link href={props.href}>
+      <Link href={props.href} as={"image"}>
         <a className={styles.cardLink}>
           <div className={cls("glass", styles.cardContainer)}>
             <div className={styles.cardHeaderWrapper}>
@@ -19,6 +19,10 @@ const Card = (props) => {
                 alt={props.name}
                 width={260}
                 height={160}
+                priority={true}
+                // placeholder="blur"
+                // blurDataURL={defaultImage}
+                // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>

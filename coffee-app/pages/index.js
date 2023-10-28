@@ -4,6 +4,8 @@ import styles from "../styles/Home.module.css";
 
 import Banner from "../components/Banner/Banner";
 import Card from "../components/Card/Card";
+import defaultImage from "../public/static/hero-image.svg";
+import coffeeStores from "../data/coffee-stores.json";
 
 export default function Home() {
   const handleOnBannerBtnClick = () => {
@@ -25,7 +27,15 @@ export default function Home() {
             handleOnClick={handleOnBannerBtnClick}
           />
           <div className={styles.heroImage}>
-            <Image src="/static/hero-image.svg" width={1000} height={600} />
+            <Image
+              src={defaultImage}
+              priority={true}
+              width={1000}
+              height={600}
+              // placeholder="blur"
+              // blurDataURL={defaultImage}
+              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
           </div>
         </section>
         <div className={styles.cardLayout}>
@@ -35,24 +45,17 @@ export default function Home() {
             href="/coffee-store/hero-coffee"
             className={styles.card}
           />
-          <Card
-            name="Hero Coffee"
-            imgUrl="/static/hero-image.svg"
-            href="/coffee-store/hero-coffee"
-            className={styles.card}
-          />
-          <Card
-            name="Hero Coffee"
-            imgUrl="/static/hero-image.svg"
-            href="/coffee-store/hero-coffee"
-            className={styles.card}
-          />
-          <Card
-            name="Hero Coffee"
-            imgUrl="/static/hero-image.svg"
-            href="/coffee-store/hero-coffee"
-            className={styles.card}
-          />
+          {coffeeStores.map((coffeeStore) => {
+            return (
+              <Card
+                key={coffeeStore.id}
+                name={coffeeStore.name}
+                imgUrl={coffeeStore.imgUrl}
+                href={`/coffee-store/${coffeeStore.id}`}
+                className={styles.card}
+              />
+            );
+          })}
         </div>
       </main>
     </div>
