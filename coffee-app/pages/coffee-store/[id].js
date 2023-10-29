@@ -20,17 +20,19 @@ export async function getStaticProps({ params }) {
 export function getStaticPaths() {
   return {
     paths: [{ params: { id: "0" } }, { params: { id: "1" } }],
-    fallback: false, // fallback: true, fallback: "blocking",
-    // fallback: false is useful when the app has a small number of static pages that depend on data (e.g. blog pages)
+    fallback: true, // fallback: false, fallback: "blocking",
+    // fallback: true is useful when the app has a large number of static pages that depend on data
   };
 }
 
 const CoffeeStoreDetail = (props) => {
   const router = useRouter();
   console.log("props", props);
-  // console.log("router", router);
-  // console.log("router-query", router.query);
   const queryId = router.query.id;
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
