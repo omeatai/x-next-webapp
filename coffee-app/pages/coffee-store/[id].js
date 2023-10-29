@@ -20,7 +20,8 @@ export async function getStaticProps({ params }) {
 export function getStaticPaths() {
   return {
     paths: [{ params: { id: "0" } }, { params: { id: "1" } }],
-    fallback: false,
+    fallback: false, // fallback: true, fallback: "blocking",
+    // fallback: false is useful when the app has a small number of static pages that depend on data (e.g. blog pages)
   };
 }
 
