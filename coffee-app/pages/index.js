@@ -5,24 +5,12 @@ import styles from "../styles/Home.module.css";
 import Banner from "../components/Banner/Banner";
 import Card from "../components/Card/Card";
 import defaultImage from "../public/static/hero-image.svg";
-// import coffeeStoresData from "../data/coffee-stores.json";
+import { fetchCoffeeStores } from "../lib/coffee-stores";
 
 export async function getStaticProps(context) {
-  const options = {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      Authorization: process.env.FOURSQUARE_API_KEY,
-    },
-  };
+  const coffeeStores = await fetchCoffeeStores();
 
-  const response = await fetch(process.env.FOURSQUARE_URI, options);
-  //FOURSQUARE_URI = "https://api.foursquare.com/v3/places/search?query=coffee&ll=43.653833032607096%2C-79.37896808855945&limit=6"
-
-  const data = await response.json();
-  console.log(data.results);
-
-  return { props: { coffeeStores: data.results } }; // will be passed to the page component as props
+  return { props: { coffeeStores } }; // will be passed to the page component as props
 }
 
 export default function Home(props) {
