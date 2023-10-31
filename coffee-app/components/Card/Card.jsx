@@ -6,7 +6,7 @@ import cls from "classnames";
 const Card = (props) => {
   return (
     <div className="card">
-      <Link href={props.href} as={"image"}>
+      <Link href={props.href} as={""}>
         <a className={styles.cardLink}>
           <div className={cls("glass", styles.cardContainer)}>
             <div className={styles.cardHeaderWrapper}>
