@@ -14,7 +14,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
-  console.log("props", props);
+  // console.log("props", props);
 
   const handleOnBannerBtnClick = () => {
     console.log("onBannerBtnClick");
@@ -37,12 +37,9 @@ export default function Home(props) {
           <div className={styles.heroImage}>
             <Image
               src={defaultImage}
-              priority={true}
+              priority={false}
               width={1000}
               height={600}
-              // placeholder="blur"
-              // blurDataURL={defaultImage}
-              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </section>
@@ -53,13 +50,13 @@ export default function Home(props) {
               {props.coffeeStores.map((coffeeStore) => {
                 return (
                   <Card
-                    key={coffeeStore.fsq_id}
+                    key={coffeeStore.id}
                     name={coffeeStore.name}
                     imgUrl={
                       coffeeStore.imgUrl ||
                       "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
                     }
-                    href={`/coffee-store/${coffeeStore.fsq_id}`}
+                    href={`/coffee-store/${coffeeStore.id}`}
                     className={styles.card}
                   />
                 );

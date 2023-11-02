@@ -13,8 +13,8 @@ const getUrlForCoffeeStores = (latLong, query, limit) => {
 const getListOfCoffeeStorePhotos = async () => {
   const photos = await unsplashApi.search.getPhotos({
     query: "coffee shop",
-    page: 1,
     perPage: 30,
+    // page: 1,
     // color: "green",
     // orientation: "portrait",
   });
@@ -27,7 +27,7 @@ const getListOfCoffeeStorePhotos = async () => {
 
 export const fetchCoffeeStores = async () => {
   const photos = await getListOfCoffeeStorePhotos();
-  console.log({ photos });
+  // console.log({ photos });
 
   const options = {
     method: "GET",
@@ -49,13 +49,17 @@ export const fetchCoffeeStores = async () => {
   // return data.results;
 
   const dataResult = data.results.map((result, idx) => {
+    const neighborhood = result.location.locality;
     return {
-      ...result,
-      imgUrl: photos[idx],
+      id: result.fsq_id,
+      address: result.location.address,
+      name: result.name,
+      neighbourhood: neighborhood,
+      imgUrl: photos.length > 0 ? photos[idx] : null,
     };
   });
 
-  console.log("###############");
-  console.log(dataResult);
+  // console.log("###############");
+  // console.log(dataResult);
   return dataResult;
 };

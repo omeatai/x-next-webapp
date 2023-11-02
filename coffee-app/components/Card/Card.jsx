@@ -19,7 +19,7 @@ const Card = (props) => {
                 alt={props.name}
                 width={260}
                 height={160}
-                priority={true}
+                priority={false}
                 // placeholder="blur"
                 // blurDataURL={defaultImage}
                 // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
